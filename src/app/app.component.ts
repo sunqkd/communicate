@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StockInfo } from './stock-search/stock-search.component';
 
 @Component({
     selector: 'app-root',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'app';
-    parentsSearch:string
+    parentsSearch:string;
+
+
+    private currentPrice:number;
+    // 捕获子组件传过来的数据
+    // $event 为传过来的数据
+    searchResultHandler(stockInfo:StockInfo){
+        this.currentPrice = stockInfo.price
+    }
 }

@@ -7,16 +7,16 @@ import { StockSearchComponent } from './stock-search/stock-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StockSearchComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule // 双向数据绑定
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		StockSearchComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule, // 双向数据绑定
+		ReactiveFormsModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

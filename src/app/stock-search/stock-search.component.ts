@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-stock-search',
@@ -9,15 +9,30 @@ export class StockSearchComponent implements OnInit {
 	
 	@Input()
 	private keyword:string;
+	private price:number;
+
+	// @Output()  // searchResult 为输出属性
+    @Output('price') // 也可以指定名字
+	searchResult:EventEmitter<StockInfo> = new EventEmitter();
 
 	constructor() {
 		setInterval( () => {
-			this.keyword = 'xxxx'
+
+			let stockInfo:StockInfo = new StockInfo(this.keyword, 100 * Math.random())
+			this.price = stockInfo.price;
+			
+			// emit 为发射的意思
+			this.searchResult.emit(stockInfo)
+
 		},3000)
 	}
-	
 
 	ngOnInit() {
 	}
+}
 
+export class StockInfo{
+	constructor(public name:string,public price:number){
+
+	}
 }
