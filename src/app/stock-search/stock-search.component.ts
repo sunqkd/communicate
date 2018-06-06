@@ -15,6 +15,9 @@ export class StockSearchComponent implements OnInit {
     @Output('price') // 也可以指定名字
 	searchResult:EventEmitter<StockInfo> = new EventEmitter();
 
+    @Output()
+	addCart:EventEmitter<StockInfo> = new EventEmitter();
+
 	constructor() {
 		setInterval( () => {
 
@@ -25,6 +28,10 @@ export class StockSearchComponent implements OnInit {
 			this.searchResult.emit(stockInfo)
 
 		},3000)
+	}
+    // 购买股票
+	buyStock(){
+		this.addCart.emit( new StockInfo(this.keyword, this.price) )
 	}
 
 	ngOnInit() {

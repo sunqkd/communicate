@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StockCartComponent } from './stock-cart/stock-cart.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		StockSearchComponent
+		StockSearchComponent,
+		StockCartComponent
 	],
 	imports: [
 		BrowserModule,

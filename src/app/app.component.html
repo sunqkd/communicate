@@ -11,3 +11,10 @@
 </p>
 
 <app-stock-search [keyword]="parentsSearch" (price)="searchResultHandler($event)"></app-stock-search>
+
+<hr/>
+
+<app-stock-search [keyword]="parentsSearch" (addCart)="addCartHandler($event)"></app-stock-search>
+
+<hr />
+<app-stock-cart [stockInfo]="stockInfo"></app-stock-cart>

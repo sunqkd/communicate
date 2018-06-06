@@ -9,12 +9,18 @@ import { StockInfo } from './stock-search/stock-search.component';
 export class AppComponent {
     title = 'app';
     parentsSearch:string;
-
-
     private currentPrice:number;
     // 捕获子组件传过来的数据
     // $event 为传过来的数据
+
+
+    private stockInfo:StockInfo
+
     searchResultHandler(stockInfo:StockInfo){
         this.currentPrice = stockInfo.price
+    }
+    
+    addCartHandler(stockInfo:StockInfo){
+        this.stockInfo = stockInfo
     }
 }
