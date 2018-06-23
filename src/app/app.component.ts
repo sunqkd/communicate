@@ -7,7 +7,7 @@ import { StockInfo } from './stock-search/stock-search.component';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'app';
+    title = 'Tom';
     parentsSearch:string;
     private currentPrice:number;
     // 捕获子组件传过来的数据
