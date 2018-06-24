@@ -10,3 +10,8 @@
 	</div>
 </div>
 <app-child [greeting]="greeting" [user]="user"></app-child>
+<hr/>
+
+<app-child1 #child1></app-child1>
+<app-child1 #child2></app-child1>
+<button (click)="child2.greeting('tomsun')">父组件模板中调用子组件的greeting方法</button>
